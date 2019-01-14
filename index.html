@@ -29,6 +29,7 @@
       }
       
       .logoClass {
+        width:200px;
       }
      .deviseClass {
       max-width: 220px;
@@ -60,6 +61,16 @@
         body {
           padding: 0px;
         }
+        .logoClass {
+          width:130px;
+        }
+        .deviseClass {
+          max-width: 130px;
+          font-size:7pt;
+          font-weight:600;
+
+        }
+
     }
       #contain {
         position:absolute;
@@ -88,6 +99,9 @@
         text-align:center !important;
         font-family: 'Montserrat', sans-serif !important;       
       }
+      .leaflet-container a {
+        color: #074b50;        
+      }     
       .btn-secondary {
         background-color: #1a9ba4 !important;
       }
@@ -270,7 +284,20 @@
  
 
     <div id="map">    </div>
-        <!-- Button trigger modal -->
+<!--     <div id="overthemap" style="position:absolute; top:0px; left:50px; right:50px; background-color:transparent; z-index:1000;overflow:auto;">
+      djkqmjdkzmdzjkmfhdqmfhsjklqfjsd<br>
+      jkqlù<br>
+      fjkslqù<br>
+      qfkù<br>
+      fqoeùkopù<br>
+      f,eqmùl,kfeùq<br>
+      koefqùkfopeq<br>
+      djkqmjdkzm<br>
+      jkqlù<br>
+      fjkslqù<br>
+
+    </div>
+ -->        <!-- Button trigger modal -->
         <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ActionsModal">
   Launch demo modal
@@ -294,7 +321,7 @@
       var mymap = L.map('map', {zoomControl:false, maxBoundsViscosity:0} );
       //mymap.setView([51.505, -0.09], 13);
       L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      attribution: '&copy; <a href="#">AGAT</a> &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
         subdomains: 'abcd',
         maxZoom: 14, 
         minZoom:10,
@@ -304,14 +331,13 @@
 
       //LOGO
        //logo position: bottomright, topright, topleft, bottomleft
-      var logo = L.control({position: 'topleft'});
+      var logo = L.control({position: 'bottomleft'});
       logo.onAdd = function(map){
         var div = L.DomUtil.create('div', 'logoClass');
-        div.innerHTML= "<img src='img/logo.png' width='220px'/>";
+        div.innerHTML= "<img src='img/logo.png' width='100%'/>";
 //        div.innerHTML+= "<div>NOTRE MISSION ?<br>Faciliter l'accès à l'information géographique<br>pour les acteurs des territoires</div>";
         return div;
       }
-      logo.addTo(mymap);
 
       var phrase = L.control({position: 'bottomleft'});
       phrase.onAdd = function(map){
@@ -320,7 +346,9 @@
 //        div.innerHTML+= "NOTRE MISSION : Faciliter l'accès à l'information géographique pour les acteurs des territoires";
         return div;
       }
+
       phrase.addTo(mymap);
+      logo.addTo(mymap);
 
 
       // var phrase = L.control({position: 'bottomleft'});
@@ -446,17 +474,40 @@
       });
 
     mymap.on('click', function(e) {
-    console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-    console.log(apropos)
-    console.log(mymap.getBounds())
-
+      console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
     });
+    
+
+    function DispoSmall(){
+      audit.setLatLng([51.48843810447892, -0.09819030761718751]);
+      urba.setLatLng([51.47603731453173, -0.06145477294921876]);
+      integr.setLatLng([51.51429786349477, -0.05527496337890626]);
+      forma.setLatLng([51.52540664057756, -0.09527206420898439]);
+      portail.setLatLng([51.45122561763559, -0.09544372558593751]);
+      reglem.setLatLng([51.430895644580175, -0.05836486816406251]);
+    }
+    function DispoBig(){
+      audit.setLatLng([51.5, -0.09]);
+      urba.setLatLng([51.489293207077296, -0.06145477294921876]);
+      integr.setLatLng([51.51429786349477, -0.05527496337890626]);
+      forma.setLatLng([51.52540664057756, -0.09527206420898439]);
+      portail.setLatLng([51.50778087767913, -0.1316642761230469]);
+      reglem.setLatLng([51.47871018363062, -0.11209487915039064]);
+    }
 
 
     $( document ).ready(function() {
       document.getElementById("InfoText").innerHTML = apropos;
       console.log("prêt")
+      ///MOVE THE MARKERS IF ON A SMALL SCREEN 
+      if ($( window ).width()<1000) {
+         console.log("smallllllllish")
+         DispoSmall();
+         group = new L.featureGroup([audit,urba,forma,integr,portail,reglem]);
+         mymap.fitBounds(group.getBounds());
+      }
     });
+    $(window).resize(function(){location.reload();});
 
     </script>
   </body>
