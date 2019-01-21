@@ -2,7 +2,7 @@ var apropos = "AGAT est né d'un constat simple : la multiplication des outils n
 
 var auditTxt = "Nous vous accompagnons pour la gestion optimisée de vos données géolocalisées à l'échelle de votre structure";
 var urbaTxt = "Dématérialisation de vos PLU(i) ou autres documents d'urbanisme, au format SIG respectant la norme INSPIRE, et téléversement sur le Géoportail de l'Urbanisme<br><br><a href='http://www.conformite-geoportail-urbanisme.fr/' target='_blank'>http://www.conformite-geoportail-urbanisme.fr/</a>";
-var formaTxt = "Formations à QGIS orientées métier pour les ingénieurs territoriaux, bureaux d'études, services techniques";
+var formaTxt = "Formations QGIS métier : des programmes sur-mesure thématiques pour les ingénieurs territoriaux, bureaux d'études, services techniques"<br>Des supports et programmes personnalisés adaptés à votre thématique métier<br>Des formateurs déclarés avec une expérience reconnue depuis plusieurs années : ;
 var integrTxt = "Enrichissez votre SIG en intégrant les données métier de votre quotidien";
 var portailTxt = "Mettez en valeur votre territoire avec un portail web cartographique";
 var reglemTxt = "Dans le cadre du partenariat national Carto-réseaux, confiez-nous la numérisation de vos réseaux et leur téléversement sur le portail de l'INERIS <a href='http://www.carto-reseaux.fr' target='_blank'>http://www.carto-reseaux.fr</a>";
