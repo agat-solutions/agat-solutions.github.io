@@ -5,7 +5,7 @@ var urbaTxt = "Dématérialisation de vos PLU(i) ou autres documents d'urbanisme
 var formaTxt = "Formations QGIS métier : des programmes sur-mesure thématiques pour les ingénieurs territoriaux, bureaux d'études, services techniques"<br>"Des supports et programmes personnalisés adaptés à votre thématique métier<br>Des formateurs déclarés avec une expérience reconnue depuis plusieurs années : nous sommes intervenus pour l'INAO, IdeoBFC, le PNR du Haut-Jura, la chambre d'agriculture de la Côte d'Or, des bureaux d'études privés..."<br> "Exercices intéressants et nombreux" "Convivialité et bonne ambiance" "Qualité des données et des otuils utilisés" 
 var integrTxt = "Enrichissez votre SIG en intégrant les données métier de votre quotidien";
 var portailTxt = "Mettez en valeur votre territoire et vos données avec un portail web cartographique original et personnalisé"<br>"Les principales fonctionnalités d'un SIG pour les non-géomaticiens";
-var reglemTxt = "Dans le cadre du partenariat national Carto-réseaux, confiez-nous la numérisation de vos réseaux et leur téléversement sur le portail de l'INERIS <a href='http://www.carto-reseaux.fr' target='_blank'>http://www.carto-reseaux.fr</a>";
+var reglemTxt = "Confiez-nous la numérisation de vos réseaux et leur téléversement sur le portail de l'INERIS <a href='http://www.carto-reseaux.fr' target='_blank'>http://www.carto-reseaux.fr</a>";<br>"Partenariat national carto-réseaux : nous intervenons partout en France via nos différents partenaires pour prendre en charge de A à Z la numérisation de vos réseaux." 
 
 
 //revenir à la ligne: <br>
